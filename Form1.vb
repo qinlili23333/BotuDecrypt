@@ -1,6 +1,7 @@
 ﻿Imports System.Net
 Imports System.Text.RegularExpressions
 Imports System.Web
+Imports System.IO
 
 Public Class Form1
     Dim DownloadClient As New WebClient
@@ -22,7 +23,7 @@ Public Class Form1
         Invoke(New Action(Of Integer)(Sub(i) ProgressBar1.Value = i), e.ProgressPercentage)
     End Sub
     Private Sub DownloadFileCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
-        Dim htmlText = My.Computer.FileSystem.ReadAllText("temp.html")
+        Dim htmlText = My.Computer.FileSystem.ReadAllText(Path.GetTempPath + "botu.html")
         Dim expr = ",'http(s):.*?(?<!,)pdf"
         Dim pdfUrl = ""
         Dim mc As MatchCollection = Regex.Matches(htmlText, expr)
@@ -31,7 +32,7 @@ Public Class Form1
             pdfUrl = Mid(m.ToString, 3)
         Next m
         TextBox1.Text = pdfUrl
-        My.Computer.FileSystem.DeleteFile("temp.html")
+        My.Computer.FileSystem.DeleteFile(Path.GetTempPath + "botu.html")
     End Sub
 
 
@@ -40,7 +41,7 @@ Public Class Form1
         Dim pdfQuery = HttpUtility.ParseQueryString(New Uri(TextBox2.Text).Query)
         Dim bookid = pdfQuery.GetValues("bookid")(0)
         Dim downloadURL = "http://www.cnbooksearch.com/CheckIpForRead.aspx?bookid=" + bookid
-        DownloadClient.DownloadFileAsync(New Uri(downloadURL), "temp.html")
+        DownloadClient.DownloadFileAsync(New Uri(downloadURL), Path.GetTempPath + "botu.html")
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         System.Diagnostics.Process.Start("https://github.com/qinlili23333/BotuDecrypt")
