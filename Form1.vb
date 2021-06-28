@@ -24,7 +24,7 @@ Public Class Form1
     End Sub
     Private Sub DownloadFileCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
         Dim htmlText = My.Computer.FileSystem.ReadAllText(Path.GetTempPath + "botu.html")
-        Dim expr = ",'http(s):.*?(?<!,)pdf"
+        Dim expr = ",'http:.*?(?<!,)pdf"
         Dim pdfUrl = ""
         Dim mc As MatchCollection = Regex.Matches(htmlText, expr)
         Dim m As Match

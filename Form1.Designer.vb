@@ -83,7 +83,7 @@ Partial Class Form1
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(674, 61)
         Me.TextBox2.TabIndex = 7
-        Me.TextBox2.Text = "http://www.cnbooksearch.com/BookRead.aspx?bookid=374061"
+        Me.TextBox2.Text = "http://www.cnbooksearch.com/CheckIpForRead.aspx?bookid=372790"
         '
         'Label2
         '
@@ -94,7 +94,7 @@ Partial Class Form1
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(92, 27)
         Me.Label2.TabIndex = 8
-        Me.Label2.Text = "页面链接"
+        Me.Label2.Text = "阅读链接"
         '
         'Label3
         '
@@ -172,7 +172,7 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.Name = "Form1"
-        Me.Text = "博图PDF解密工具by琴梨梨 v1.0.2"
+        Me.Text = "博图PDF解密工具by琴梨梨 v1.0.3"
         CType(Me.AxPDFView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
