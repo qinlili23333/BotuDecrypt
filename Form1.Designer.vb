@@ -22,6 +22,7 @@ Partial Class Form1
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.AxPDFView1 = New AxPDFVIEWLib.AxPDFView()
@@ -32,17 +33,17 @@ Partial Class Form1
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.AxPDFView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft YaHei UI", 16.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(833, 115)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Location = New System.Drawing.Point(1562, 230)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(157, 59)
+        Me.Button1.Size = New System.Drawing.Size(294, 118)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "解密保存"
         Me.Button1.UseVisualStyleBackColor = True
@@ -50,11 +51,11 @@ Partial Class Form1
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(103, 115)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextBox1.Location = New System.Drawing.Point(193, 230)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(727, 61)
+        Me.TextBox1.Size = New System.Drawing.Size(1360, 118)
         Me.TextBox1.TabIndex = 2
         Me.TextBox1.Text = "https://botu-bks-books.bj.bcebos.com/a01pbooks/L/38/1133729.pdf"
         '
@@ -62,26 +63,29 @@ Partial Class Form1
         '
         Me.AxPDFView1.Enabled = True
         Me.AxPDFView1.Location = New System.Drawing.Point(0, 0)
+        Me.AxPDFView1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.AxPDFView1.Name = "AxPDFView1"
+        Me.AxPDFView1.OcxState = CType(resources.GetObject("AxPDFView1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxPDFView1.Size = New System.Drawing.Size(100, 50)
         Me.AxPDFView1.TabIndex = 16
         Me.AxPDFView1.Visible = False
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(2, 183)
-        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(2)
+        Me.ProgressBar1.Location = New System.Drawing.Point(4, 366)
+        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(989, 24)
+        Me.ProgressBar1.Size = New System.Drawing.Size(1854, 48)
         Me.ProgressBar1.TabIndex = 5
         '
         'TextBox2
         '
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(103, 52)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextBox2.Location = New System.Drawing.Point(193, 104)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(674, 61)
+        Me.TextBox2.Size = New System.Drawing.Size(1260, 118)
         Me.TextBox2.TabIndex = 7
         Me.TextBox2.Text = "http://www.cnbooksearch.com/CheckIpForRead.aspx?bookid=372790"
         '
@@ -89,10 +93,10 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(2, 67)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(4, 134)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(92, 27)
+        Me.Label2.Size = New System.Drawing.Size(182, 52)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "阅读链接"
         '
@@ -100,20 +104,20 @@ Partial Class Form1
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(4, 135)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(8, 270)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(90, 27)
+        Me.Label3.Size = New System.Drawing.Size(177, 52)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "PDF地址"
         '
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Microsoft YaHei UI", 16.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(780, 52)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button3.Location = New System.Drawing.Point(1462, 104)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(209, 59)
+        Me.Button3.Size = New System.Drawing.Size(392, 118)
         Me.Button3.TabIndex = 11
         Me.Button3.Text = "读取PDF地址"
         Me.Button3.UseVisualStyleBackColor = True
@@ -121,10 +125,10 @@ Partial Class Form1
         'Button5
         '
         Me.Button5.Font = New System.Drawing.Font("Microsoft YaHei UI", 16.125!)
-        Me.Button5.Location = New System.Drawing.Point(870, 1)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button5.Location = New System.Drawing.Point(364, 2)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(119, 47)
+        Me.Button5.Size = New System.Drawing.Size(223, 94)
         Me.Button5.TabIndex = 14
         Me.Button5.Text = "博图"
         Me.Button5.UseVisualStyleBackColor = True
@@ -132,32 +136,32 @@ Partial Class Form1
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Microsoft YaHei UI", 16.125!)
-        Me.Button4.Location = New System.Drawing.Point(2, 1)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button4.Location = New System.Drawing.Point(4, 2)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(188, 47)
+        Me.Button4.Size = New System.Drawing.Size(352, 94)
         Me.Button4.TabIndex = 13
         Me.Button4.Text = "开源Repo"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'Label1
+        'Button2
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 22.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label1.Location = New System.Drawing.Point(267, 1)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(463, 50)
-        Me.Label1.TabIndex = 15
-        Me.Label1.Text = "UI丑是Feature不爽不要用"
+        Me.Button2.Font = New System.Drawing.Font("Microsoft YaHei UI", 16.125!)
+        Me.Button2.Location = New System.Drawing.Point(1059, 2)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(797, 94)
+        Me.Button2.TabIndex = 17
+        Me.Button2.Text = "启用解密本地文件"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(15.0!, 30.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(803, 208)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(1968, 416)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -169,10 +173,10 @@ Partial Class Form1
         Me.Controls.Add(Me.AxPDFView1)
         Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.Name = "Form1"
-        Me.Text = "博图PDF解密工具by琴梨梨 v1.0.3"
+        Me.Text = "博图PDF解密工具by琴梨梨 v2.0.0"
         CType(Me.AxPDFView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -188,5 +192,5 @@ Partial Class Form1
     Friend WithEvents Button3 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents Button2 As Button
 End Class

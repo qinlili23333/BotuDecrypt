@@ -2,6 +2,9 @@
 Imports System.Text.RegularExpressions
 Imports System.Web
 Imports System.IO
+Imports System.Environment
+Imports System.Windows
+Imports System.ComponentModel
 
 Public Class Form1
     Dim DownloadClient As New WebClient
@@ -17,6 +20,7 @@ Public Class Form1
         AxPDFView1.SetCtrlPDFURL(url, ept, ept, zero)
         ProgressBar1.Value = 70
         AxPDFView1.SaveAsDlg(ept, zero)
+        AxPDFView1.CloseFile()
         ProgressBar1.Value = 100
     End Sub
     Private Sub ShowDownProgress(ByVal sender As Object, ByVal e As DownloadProgressChangedEventArgs)
@@ -49,5 +53,42 @@ Public Class Form1
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         System.Diagnostics.Process.Start("http://www.cnbooksearch.com/")
+    End Sub
+    Dim Nginx As Process
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If Nginx Is Nothing Then
+            Directory.SetCurrentDirectory(CurrentDirectory + "\nginx")
+            Button2.Text = "正在启动Nginx服务"
+            ProgressBar1.Value = 15
+            Nginx = Process.Start("nginx.exe")
+            If Nginx IsNot Nothing Then
+                Button2.Text = "选择文件"
+                ProgressBar1.Value = 100
+            Else
+                Button2.Text = "Nginx服务启动失败"
+                ProgressBar1.Value = 0
+            End If
+        Else
+            Dim fd As New OpenFileDialog() With {
+                                   .CheckFileExists = True,
+                                   .CheckPathExists = True,
+                                   .Title = "Select the game file.",
+                                   .Multiselect = False,
+                                   .RestoreDirectory = True,
+                                   .InitialDirectory = CurrentDirectory
+                                   }
+            If fd.ShowDialog() = Forms.DialogResult.OK Then
+                File.Copy(fd.FileName, "html\temp.pdf", True)
+                TextBox1.Text = "http://localhost:4399/temp.pdf"
+            Else
+                ProgressBar1.Value = 0
+            End If
+        End If
+    End Sub
+
+    Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        If Nginx IsNot Nothing Then
+            Nginx.Kill()
+        End If
     End Sub
 End Class
