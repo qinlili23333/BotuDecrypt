@@ -1,0 +1,4 @@
+127.0.0.1 - - [30/Jul/2022:14:13:52 +1000] "GET / HTTP/1.1" 200 615 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+127.0.0.1 - - [30/Jul/2022:14:13:52 +1000] "GET /favicon.ico HTTP/1.1" 404 555 "http://localhost:4399/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+127.0.0.1 - - [30/Jul/2022:14:14:14 +1000] "GET /temp.pdf HTTP/1.1" 200 20654643 "-" "PDFView"
+127.0.0.1 - - [30/Jul/2022:14:29:59 +1000] "GET /temp.pdf HTTP/1.1" 200 20654643 "-" "PDFView"

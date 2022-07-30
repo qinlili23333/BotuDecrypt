@@ -1,0 +1,2 @@
+2022/07/30 14:12:05 [emerg] 19848#29668: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2022/07/30 14:13:52 [error] 2012#20316: *1 CreateFile() "C:\DevEnv\BotuDecrypt\bin\x64\Debug\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:4399", referrer: "http://localhost:4399/"
