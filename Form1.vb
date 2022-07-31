@@ -87,8 +87,11 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        If Nginx IsNot Nothing Then
-            Nginx.Kill()
+        Dim Proc = Process.GetProcessesByName("nginx")
+        If Proc.Length > 0 Then
+            For Each ToKill In Proc
+                ToKill.Kill()
+            Next
         End If
     End Sub
 End Class
