@@ -1,16 +1,37 @@
-﻿Imports System.Net
+﻿Imports System.ComponentModel
+Imports System.Environment
+Imports System.IO
+Imports System.Net
+Imports System.Runtime.InteropServices
 Imports System.Text.RegularExpressions
 Imports System.Web
-Imports System.IO
-Imports System.Environment
 Imports System.Windows
-Imports System.ComponentModel
 
 Public Class Form1
+    <DllImport("kernel32.dll")>
+    Private Shared Function FreeConsole() As Boolean
+    End Function
+
+
+    <DllImport("kernel32.dll")>
+    Public Shared Function AllocConsole() As Boolean
+    End Function
     Dim DownloadClient As New WebClient
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddHandler DownloadClient.DownloadProgressChanged, AddressOf ShowDownProgress
         AddHandler DownloadClient.DownloadFileCompleted, AddressOf DownloadFileCompleted
+        Dim Args = GetCommandLineArgs()
+        If Args.Length > 2 Then
+            '自动处理模式
+            '传入参数第一个为URL，第二个为文件名，文件名不需要带.pdf
+            AxPDFView1.SetCtrlPDFURL(Args(1), "", "", 0)
+            If Not Directory.Exists(CurrentDirectory + "\output") Then
+                Directory.CreateDirectory(CurrentDirectory + "\output")
+            End If
+            AxPDFView1.SaveAs(CurrentDirectory + "\output\" + Args(2) + ".pdf", 1)
+            AxPDFView1.CloseFile()
+            Environment.Exit(1)
+        End If
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim url = TextBox1.Text
