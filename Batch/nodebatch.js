@@ -50,5 +50,5 @@ timelog("Parse Success, " + pdfList.length + " Files Found.");
 const execSync = require("child_process").execSync;
 for (let i = 0; pdfList[i]; i++) {
     console.log(pdfList[i]);
-    execSync('BotuDecrypt.exe \"' + pdfList[i].url + '\" \"' + pdfList[i].name + '\"');
+    execSync('BotuDecrypt.exe \"' + pdfList[i].url + '\" \"' + HandleFileName(pdfList[i].name) + '\"');
 }

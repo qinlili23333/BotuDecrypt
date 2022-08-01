@@ -30,7 +30,7 @@ Public Class Form1
             End If
             AxPDFView1.SaveAs(CurrentDirectory + "\output\" + Args(2) + ".pdf", 1)
             AxPDFView1.CloseFile()
-            Environment.Exit(1)
+            Environment.Exit(0)
         End If
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
