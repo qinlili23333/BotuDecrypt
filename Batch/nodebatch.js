@@ -51,11 +51,9 @@ const execSync = require("child_process").execSync;
 let errorList = [];
 for (let i = 0; pdfList[i]; i++) {
     console.log(pdfList[i]);
-    try {
+    if (fs.existsSync("output/" + HandleFileName(pdfList[i].name) + ".pdf")) {
+        console.log("Skip Exist")
+    } else {
         execSync('BotuDecrypt.exe \"' + pdfList[i].url + '\" \"' + HandleFileName(pdfList[i].name) + '\"');
-    } catch (e) {
-        console.error(e);
-        errorList.push(pdfList[i]);
-        fs.writeFile("error.json", JSON.stringify(errorList));
     }
 }

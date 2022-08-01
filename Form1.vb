@@ -30,7 +30,12 @@ Public Class Form1
             If File.Exists(CurrentDirectory + "\output\" + Args(2) + ".pdf") Then
                 Environment.Exit(0)
             Else
-                AxPDFView1.SetCtrlPDFURL(Args(1), "", "", 0)
+                Try
+                    AxPDFView1.SetCtrlPDFURL(Args(1), "", "", 0)
+                Catch ex As Exception
+                    File.WriteAllText("Error" + New DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds().ToString() + ".log", String.Join("+", Args) + Environment.NewLine + ex.ToString)
+                    Environment.Exit(0)
+                End Try
                 AxPDFView1.SaveAs(CurrentDirectory + "\output\" + Args(2) + ".pdf", 1)
                 AxPDFView1.CloseFile()
                 Environment.Exit(0)
