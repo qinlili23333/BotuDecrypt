@@ -4,4 +4,9 @@
     <StartArguments>
     </StartArguments>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <StartAction>Project</StartAction>
+    <StartArguments>
+    </StartArguments>
+  </PropertyGroup>
 </Project>

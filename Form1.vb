@@ -24,16 +24,17 @@ Public Class Form1
         If Args.Length > 2 Then
             '自动处理模式
             '传入参数第一个为URL，第二个为文件名，文件名不需要带.pdf
-            AxPDFView1.SetCtrlPDFURL(Args(1), "", "", 0)
             If Not Directory.Exists(CurrentDirectory + "\output") Then
                 Directory.CreateDirectory(CurrentDirectory + "\output")
             End If
             If File.Exists(CurrentDirectory + "\output\" + Args(2) + ".pdf") Then
                 Environment.Exit(0)
+            Else
+                AxPDFView1.SetCtrlPDFURL(Args(1), "", "", 0)
+                AxPDFView1.SaveAs(CurrentDirectory + "\output\" + Args(2) + ".pdf", 1)
+                AxPDFView1.CloseFile()
+                Environment.Exit(0)
             End If
-            AxPDFView1.SaveAs(CurrentDirectory + "\output\" + Args(2) + ".pdf", 1)
-            AxPDFView1.CloseFile()
-            Environment.Exit(0)
         End If
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
