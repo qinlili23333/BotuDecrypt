@@ -28,6 +28,9 @@ Public Class Form1
             If Not Directory.Exists(CurrentDirectory + "\output") Then
                 Directory.CreateDirectory(CurrentDirectory + "\output")
             End If
+            If File.Exists(CurrentDirectory + "\output\" + Args(2) + ".pdf") Then
+                Environment.Exit(0)
+            End If
             AxPDFView1.SaveAs(CurrentDirectory + "\output\" + Args(2) + ".pdf", 1)
             AxPDFView1.CloseFile()
             Environment.Exit(0)
