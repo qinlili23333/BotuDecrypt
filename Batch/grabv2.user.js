@@ -17,9 +17,9 @@
             console.log("Processing Book " + num);
             let webPage = await (await fetch("https://webvpn.njucm.edu.cn/http/webvpnd7aec0ab7095a62bc04960cec7788f5b453a3cf4b7ada805a1fdbb8f1cfe985b/CheckIpForRead.aspx?bookid=" + num)).text();
             let webDom = new DOMParser().parseFromString(webPage, "text/html");
-            console.info(webDom);
+            console.debug(webDom);
             let pdfUrl = webDom.body.getAttribute("onload").split("'")[3];
-            console.info((pdfUrl == "") ? "Cannot Access. Skip." : pdfUrl);
+            console.debug((pdfUrl == "") ? "Cannot Access. Skip." : pdfUrl);
             let pdfObj = {
                 name: webDom.title,
                 url: (pdfUrl == "") ? null : pdfUrl,
@@ -27,7 +27,7 @@
                 filename: pdfUrl.substr(pdfUrl.lastIndexOf("/") + 1),
                 link: "/CheckIpForRead.aspx?bookid=" + num
             }
-            console.info(pdfObj);
+            console.debug(pdfObj);
             pdfArray.push(pdfObj);
             if (pdfArray.length > 999) {
                 dlFile(URL.createObjectURL(new Blob([JSON.stringify(pdfArray)])), Date.now() + ".json");
