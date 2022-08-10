@@ -50,7 +50,7 @@ Public Class Form1
         AxPDFView1.SetCtrlPDFURL(url, ept, ept, zero)
         ProgressBar1.Value = 70
         AxPDFView1.SaveAsDlg(ept, zero)
-        AxPDFView1.CloseFile()
+        'AxPDFView1.CloseFile()
         ProgressBar1.Value = 100
     End Sub
     Private Sub ShowDownProgress(ByVal sender As Object, ByVal e As DownloadProgressChangedEventArgs)

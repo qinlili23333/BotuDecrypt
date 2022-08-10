@@ -33,7 +33,7 @@ function HandleFileName(path) {
         }
 
     }
-    return buffer;
+    return buffer.replace(/[^\x00-\x7F]/g, "");;
 }
 if (process.argv[2]) {
     timelog("JSON path:" + process.argv[2]);

@@ -62,13 +62,12 @@ Partial Class Form1
         'AxPDFView1
         '
         Me.AxPDFView1.Enabled = True
-        Me.AxPDFView1.Location = New System.Drawing.Point(0, 0)
+        Me.AxPDFView1.Location = New System.Drawing.Point(4, 413)
         Me.AxPDFView1.Margin = New System.Windows.Forms.Padding(6)
         Me.AxPDFView1.Name = "AxPDFView1"
         Me.AxPDFView1.OcxState = CType(resources.GetObject("AxPDFView1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxPDFView1.Size = New System.Drawing.Size(100, 50)
+        Me.AxPDFView1.Size = New System.Drawing.Size(1854, 1006)
         Me.AxPDFView1.TabIndex = 16
-        Me.AxPDFView1.Visible = False
         '
         'ProgressBar1
         '
@@ -159,7 +158,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(15.0!, 30.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1858, 422)
+        Me.ClientSize = New System.Drawing.Size(1858, 1459)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
@@ -171,7 +170,6 @@ Partial Class Form1
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.AxPDFView1)
         Me.Controls.Add(Me.Button1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "Form1"
